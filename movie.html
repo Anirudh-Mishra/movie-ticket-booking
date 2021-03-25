@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"> -->
+  
 
   <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="book.css">
+  <link rel="stylesheet" href="movie.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -168,45 +168,53 @@
       <br>
       <div id="selseatsdiv"><span id="selseats"></span></div>
       <br>
-      <button type="button" class="btn a1" id="btn" onclick="book()"><a id="booking" style="text-decoration: none;" href="#">Book Now</a></button>
     </p>
-    <br>
+   
+
     <div class="addons">
 
-      <h2 style="padding-left: 650px">Add-ons</h2>
+      <h2 style="padding-left: 680px; color: aliceblue;">Add-ons</h2>
       <br><br>
 
-      <!-- <div class="card" style="width:100px">
-        <img src="popcorn.png" class="card-img-top" height=150 width=150>
+      <div class="card" style="width:250px">
+        <img src="popcorn.png" class="card-img-top" height=150 width=150 style="margin-top: 10px; padding: 0px 40px">
         <div class="card-body">
-          <h4 class="card-title" style="margin-left:40px">Popcorn</h4>
+          <h5 class="card-title" style="margin-left:60px">Popcorn</h5>
+          <p class="cost" id="cost1" style="margin-left: 75px;">Rs125</p>
+          <input type="number" id="quantity1" name="quantity" min="0" max="10" style="margin-top:20px; margin-bottom: 20px; margin-left: 70px">
         </div>
       </div>
 
-      <div class="card" style="width:40px">
-        <img src="cola.png" height=130 width=150 style="padding:0px 30px; margin-bottom:20px">
+      <div class="card" style="width:250px">
+        <img src="cola.png" height=130 width=150 style="padding:0px 0px 0px 50px; margin-left:30px; margin-bottom:20px; margin-top:10px">
         <div class="card-body">
-          <h4 class="card-title" style="margin-left:55px">Cola</h4>
+          <h5 class="card-title" style="margin-left:82px">Cola</h5>
+          <p class="cost" id="cost2" style="margin-left: 85px;">Rs30</p>
+          <input type="number" id="quantity2" name="quantity" min="0" max="10" style="margin-top:20px; margin-bottom: 20px; margin-left:75px">
         </div>
       </div>
 
-      <div class="card" style="width:40px">
-        <img src="burger.png" height=150 width=180 style="padding:0px 30px">
+      <div class="card" style="width:250px">
+        <img src="burger.png" height=150 width=180 style="padding:0px 0px 0px 50px; margin-left:10px; margin-top: 10px">
         <div class="card-body">
-          <h4 class="card-title" style="margin-left:70px">Burger</h4>
+          <h5 class="card-title" style="margin-left:72px">Burger</h5>
+          <p class="cost" id="cost3" style="margin-left: 80px;">Rs120</p>
+          <input type="number" id="quantity3" name="quantity" min="0" max="10" style="margin-left:75px; margin-bottom: 20px; margin-top: 20px">
         </div>
       </div>
 
-      <div class="card" style="width:50px">
-        <img src="meal.png" height=150 width=300 style="padding:0px 30px">
+      <div class="card" style="width:250px">
+        <img src="meal.png" height=150 width=225 style="margin-top: 10px; margin-left: 20px">
         <div class="card-body">
-          <h4 class="card-title" style="margin-left:110px">Burger Meal</h4>
+          <h5 class="card-title" style="padding-left: 55px">Burger Meal</h5>
+          <p class="cost" id="cost4" style="margin-left: 85px;">Rs180</p>
+          <input type="number" id="quantity4" name="quantity" min="0" max="10" style="margin-left:80px; margin-bottom: 20px; margin-top: 20px">
         </div>
       </div>
-    
-    </div> -->
-  </div> 
-    
+    </div>
+    <br>
+    <button type="button" class="btn" id="btn" onclick="book()"><a id="booking" style="text-decoration: none;">Book Now</a></button>
+  </div>  
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
