@@ -113,24 +113,6 @@ p.text span {
   align-self: center;
 }
 
-.btn{
-  background-color: #f44336;
-  color: white;
-  padding: 10px;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin-left: 720px;
-  border-radius: 5px;
-}
-
-.btn:hover{
-  cursor: pointer;
-  background-color: #ff1a1a;
-}
-
 #booking{
   color: white;
 }
@@ -159,4 +141,26 @@ p.text span {
 .list-group-item{
   background-color:  #12262b;
   color: aliceblue;
+}
+
+#billsum{
+  border: none;
+}
+
+.btn{
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 740px;
+  border-radius: 5px;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: #ff1a1a;
 }
