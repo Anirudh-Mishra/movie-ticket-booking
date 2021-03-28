@@ -81,3 +81,156 @@ body{
   text-align: center;
 }
 
+/* Footer CSS Starts here!!!!
+!!!!! */
+
+.footer{
+  background-color:#12262b;
+}
+
+.footer_1 hr{
+  float:left;
+  margin-left: 5%;
+  margin-right: 5%;
+  height:1.5px;
+  width:35%;
+  background-color:whitesmoke;
+}
+
+.footer_text{
+  margin-top: 5px;
+  float: left;
+  width:10%;
+  text-align: center;
+  color:whitesmoke; 
+  font-weight: bold;
+}
+
+.TandC{
+  margin-left: 3%;
+  float:left;
+  width:40%;
+  color:whitesmoke;
+  text-align: center;
+  font-size: 13px;
+}
+
+.PP{
+  transition: 1s;
+  letter-spacing: 2px;
+}
+
+.TC{
+  transition: 1s;
+  letter-spacing: 2px;
+}
+
+.ABOUT{
+  transition: 1s;
+  letter-spacing: 2px;
+}
+
+.PP:hover{
+  cursor: pointer;
+  letter-spacing: 3.65px;
+  transform:translate(0,-2px);
+  transition: 1s;
+}
+
+.TC:hover{
+  cursor: pointer;
+  letter-spacing: 3.45px;
+  transform:translate(0,-2px);
+  transition: 1s;
+}
+
+.ABOUT:hover{
+  cursor: pointer;
+  letter-spacing: 4px;
+  transform:translate(0,-2px);
+  transition: 1s;
+}
+
+.footer_img{
+  float:left;
+  width:5%;
+  margin: none;
+  margin-left: 5%;
+  margin-bottom: none;
+  margin-right: 10px;
+  padding-top: 45px;
+  
+}
+
+.logos{
+  float:left;
+  width:30%;
+}
+
+.details{
+  float:left;
+  width:15%;
+  color:whitesmoke;
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer_img img:hover{
+  box-shadow: whitesmoke;
+  cursor: pointer;
+  transform:translate(0,-10px);
+  transition: 1s;
+}
+
+#footer_img_fb{
+  border-radius: 50%;
+  transition: 1s;
+}
+
+#footer_img_twitter{
+  border-radius: 50%;
+  transition: 1s;
+}
+
+#footer_img_insta{
+  border-radius: 50%;
+  transition: 1s;
+}
+
+.details{
+  transition: 1s;
+}
+
+#footer_number{
+  letter-spacing: 2px;
+}
+
+#footer_number:hover{
+  cursor: pointer;
+  letter-spacing: 5px;
+  transform:translate(0,-2px);
+  transition: 1s;
+}
+
+#footer_email{
+  letter-spacing: 2px;
+}
+
+#footer_email:hover{
+  cursor: pointer;
+  letter-spacing: 5px;
+  transform:translate(0,-2px);
+  transition: 1s;
+}
+
+#footer_membership{
+  letter-spacing: 2px;
+}
+
+#footer_membership:hover{
+  cursor: pointer;
+  letter-spacing: 4.5px;
+  transform:translate(0,-2px);
+  transition: 1s;
+}
