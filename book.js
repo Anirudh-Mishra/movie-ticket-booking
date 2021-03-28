@@ -1,12 +1,14 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('.xyz');
 const seats = document.querySelectorAll('.a2 .seat:not(.occupied)');
 const count = document.getElementById('count');
 const selseats = document.getElementById('selseats');
 const price = document.getElementById('price');
 const array = [];
 const rating = 6;
+var price_seats = 0;
 const popularity = 500;
 var price_per_seat;
+
 
 const populateUI = () => {
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
@@ -37,13 +39,15 @@ const updateSelectedSeatsCount = () => {
   else
     selseats.innerText = "";
 
-  price.innerText = selectedSeatsCount * price_per_seat;
+  price_seats = selectedSeatsCount * price_per_seat;
+  price.innerText = price_seats;
 };
 
 // Seat select event
 container.addEventListener('click', e => {
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')){
     document.getElementById("selseats").innerText= "";
+    
     e.target.classList.toggle('selected');
     let a = e.target.getAttribute("name");
     if(array.includes(a)){
@@ -92,3 +96,26 @@ function loadseats(){
 function setPrice(n){
   price_per_seat = 150 * n/10; 
 }
+
+function calcBill(){
+  var bill = 0;
+  bill += document.getElementById("quantity1").value * 125;
+  bill += document.getElementById("quantity2").value * 30;
+  bill += document.getElementById("quantity3").value * 120;
+  bill += document.getElementById("quantity4").value * 180;
+  return bill;
+}
+
+$(document).ready(function(){
+  $(".quant").change(function(){
+    $("#amount2").text(calcBill());
+    $("#amount3").text(price_seats+calcBill());
+    $(".pamount").css("margin-right","30px");
+  });
+
+  $(container).click(function(){
+    $("#amount1").text(price_seats);
+    $("#amount3").text(price_seats+calcBill());
+    $(".pamount").css("margin-right","30px");
+  });
+});
