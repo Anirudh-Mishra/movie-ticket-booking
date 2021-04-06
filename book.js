@@ -4,7 +4,7 @@ const count = document.getElementById('count');
 const selseats = document.getElementById('selseats');
 const price = document.getElementById('price');
 const array = [];
-
+const rating = 6;
 var price_seats = 0;
 const popularity = 500;
 var price_per_seat;
