@@ -281,4 +281,8 @@ span{
   .pay-btn {
     border-radius:0px;
   }
+  #total1{
+    font-weight: bolder;
+    font-size: larger;
+  }
 }

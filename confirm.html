@@ -9,6 +9,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+    <script type="text/javascript" src="movie.js"></script>
+    <script type="text/javascript" src="book.js"></script>
     <script type="text/javascript" src="confirm.js"></script>
     <script type="text/javascript" src="pay.js"></script>
     <title>Document</title>
@@ -19,21 +21,21 @@
             <div class='order-info'>
             <div class='order-info-content'>
                 <h2>Booking Summary</h2>
-                <div class='line'></div>
+                <!-- <div class='line'></div> -->
                 <table class='order-table'>
                 <tbody>
                     <tr>
-                    <td><img src='https://dl.dropboxusercontent.com/s/sim84r2xfedj99n/%24_32.JPG' class='full-width'></img>
+                    <td><img src='https://dl.dropboxusercontent.com/s/sim84r2xfedj99n/%24_32.JPG' class='full-width' id="movImg"></img>
                     </td>
                     <td>
-                        <br> <span class='thin'>Nike</span>
-                        <br> <span class='thin small'> Color: Grey/Orange, Size: 10.5<br><br></span>
+                        <br> <span class='thin' id="m1"></span>
+                        <br> <span class='thin small' id="s1"> <br><br></span>
                     </td>
         
                     </tr>
                     <tr>
                     <td>
-                        <div class='price'>$99.95</div>
+                        <div class='price' id="p1"></div>
                     </td>
                     </tr>
                 </tbody>
@@ -43,35 +45,16 @@
                 <table class='order-table'>
                 <tbody>
                     <tr>
-                    <td><img src='https://dl.dropboxusercontent.com/s/qbj9tsbvthqq72c/Vintage-20L-Backpack-by-Fj%C3%A4llr%C3%A4ven.jpg' class='full-width'></img>
+                    <td><img src='meal.png' class='full-width'></img>
                     </td>
                     <td>
-                        <br><span class='thin'>Fjällräven</span>
-                        <br><span class='thin small'> Color: Olive, Size: 20L</span>
+                        <span class='thin'>Add Ons</span>
+                        <!-- <br><span class='thin small'> Color: Olive, Size: 20L</span> -->
                     </td>
                     </tr>
                     <tr>
                     <td>
-                        <div class='price'>$235.95</div>
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
-                <div class='line'></div>
-                <table class='order-table'>
-                <tbody>
-                    <tr>
-                    <td><img src='https://dl.dropboxusercontent.com/s/nbr4koso8dpoggs/6136C1p5FjL._SL1500_.jpg' class='full-width'></img>
-                    </td>
-                    <td>
-                        <br> <span class='thin'>Monobento</span>
-                        <br> <span class='thin small'> Color: Pink, Size: Medium</span>
-                    </td>
-        
-                    </tr>
-                    <tr>
-                    <td>
-                        <div class='price'>$25.95</div>
+                        <div class='price' id="p2">Rs 0</div>
                     </td>
                     </tr>
                 </tbody>
@@ -83,8 +66,8 @@
                     TOTAL
                 </span>
                 <span style='float:right; text-align:right;'>
-                    <div class='thin dense'>$68.75</div>
-                    $435.55
+                    <div class='thin dense gst1'></div>
+                    <h5><b><span id="total1"></span></b></h5>
                 </span>
             </div>
             </div>
