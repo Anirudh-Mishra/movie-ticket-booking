@@ -119,10 +119,15 @@ p.text span {
 
 .addons{
   margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .card{
-  background-color: #12262b;
+  /* background-color: #12262b; */
+  background-color: rgb(58, 55, 55);
   float: left;
   margin-left: 100px;
   border:#ff1a1a;
@@ -156,7 +161,8 @@ p.text span {
   text-decoration: none;
   display: inline-block;
   font-size: 15px;
-  margin-left: 740px;
+  /* margin-left: 740px; */
+  margin-left: 45%;
   border-radius: 5px;
 }
 
