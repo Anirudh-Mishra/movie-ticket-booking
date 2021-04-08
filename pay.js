@@ -6,7 +6,7 @@ function paid(){
   var name=document.form.name.value;
   var datecheck=/^\d{2}\s\/\s\d{2}$/;
   var check = 1;
-  if(number.length<16){
+  if(number.length<19){
     document.getElementById("error1").innerHTML="*Please enter full card number";
     check = 0;
   }
