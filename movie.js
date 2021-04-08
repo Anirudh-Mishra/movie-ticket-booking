@@ -59,6 +59,10 @@ function getMovie() {
         sessionStorage.setItem('name',movie.title);
         sessionStorage.setItem('poster',x);
 
+        var bgi = movie.backdrop_path;
+        let bg = a + bgi;
+        sessionStorage.setItem('bgposter',bg);
+
 
       $('#movie').html(output);
 

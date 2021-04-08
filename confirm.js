@@ -49,4 +49,7 @@ $(function($) {
 
     var poster= sessionStorage.getItem('poster');
     $("#movImg").attr("src", poster);
+
+    var bgposter= sessionStorage.getItem('bgposter');
+    $("body").css({"background-image": "url(" + bgposter + ")", 'background-repeat': 'no-repeat'});;
     });    
