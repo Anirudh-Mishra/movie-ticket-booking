@@ -30,6 +30,7 @@ function paid(){
   if(check == 1){
     document.getElementById("error3").innerHTML="";
     document.getElementById("pay-btn").innerHTML="Booking Confirmed!";
+    pageRedirect();
   }
 }
 
@@ -87,4 +88,12 @@ function select(){
       activeDropdown = null;
       }
   }
+}
+
+function pageRedirect(){
+  var delay = 1000;
+
+  setTimeout(function(){
+   window.location = "success.html";
+  },delay);
 }
