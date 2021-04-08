@@ -66,7 +66,7 @@ function getMovie() {
 
       $('#movie').html(output);
 
-      sessionStorage.setItem('rating',movie.vote_average);
+      localStorage.setItem('rating',movie.vote_average);
 
     })
     .catch((err) => {
@@ -74,7 +74,3 @@ function getMovie() {
     });
     
 }
-
-
-
-
