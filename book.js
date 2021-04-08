@@ -32,7 +32,6 @@ const updateSelectedSeatsCount = () => {
   const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
 
   localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
-  sessionStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
 
   const selectedSeatsCount = selectedSeats.length;
 
@@ -60,8 +59,11 @@ container.addEventListener('click', e => {
       var ind = array.indexOf(a);
       array.splice(ind, 1);
     }
-    else
+    else{
       array.push(a);
+      sessionStorage.setItem('seats', array);
+    }
+
     updateSelectedSeatsCount();
     populateUI();
   }

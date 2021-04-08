@@ -24,7 +24,7 @@ $(function($) {
     var name= sessionStorage.getItem('name');
     $('#m1').html(name);
 
-    var ss= sessionStorage.getItem('selectedSeats');
+    var ss= sessionStorage.getItem('seats');
     $('#s1').html(ss);
 
     var price2= sessionStorage.getItem('addon');
