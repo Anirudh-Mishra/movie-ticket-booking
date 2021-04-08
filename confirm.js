@@ -1,12 +1,21 @@
 $(function($) {
     $('[data-numeric]').payment('restrictNumeric');
-    $('.cc-number').payment('formatCardNumber');
+
+    $('.cc-number').on('keyup', function() {
+        var foo = $(this).val().split(" ").join(""); 
+        if (foo.length > 0) {
+          foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
+        }
+        $(this).val(foo);
+    });
+
     $('.cc-exp').payment('formatCardExpiry');
     $('.cc-cvc').payment('formatCardCVC');
     $.fn.toggleInputError = function(erred) {
     this.parent('.form-group').toggleClass('has-error', erred);
     return this;
     };
+    
     $('form').submit(function(e) {
     e.preventDefault();
     var cardType = $.payment.cardType($('.cc-number').val());
