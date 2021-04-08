@@ -9,8 +9,8 @@ var price_seats = 0;
 const popularity = 500;
 var price_per_seat;
 
-if (sessionStorage['rating']) {
-let rating = sessionStorage.getItem('rating'); 
+if (localStorage['rating']) {
+let rating = localStorage.getItem('rating'); 
 console.log(rating);
 
 
