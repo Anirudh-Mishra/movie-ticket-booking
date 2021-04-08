@@ -73,7 +73,7 @@ ul li:hover {
   width:100%;
 }
 .half-input-table td:first-of-type {
-  border-right:10px solid #4488dd;
+  
   width:50%;
 }
 .window {
@@ -195,7 +195,7 @@ span{
   margin-right:auto;
 }
 .credit-info {
-  background:#4488dd;
+  background:#ff751a;
   height:100%;
   width:50%;
   color:#eee;
