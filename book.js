@@ -72,7 +72,7 @@ container.addEventListener('click', e => {
 function book() {
   if (array.length == 0) {
     document.getElementById("selseatsdiv").style.color = "#ff1a1a";
-    selseats.innerText = "No seats selected!";
+    alert("No seats selected! Kindly select atleast one seat before proceeding for payment!");
   }
   else {
     for (var i = 0; i < array.length; i++)
@@ -80,6 +80,7 @@ function book() {
     selseats.innerText = "";
     document.getElementById("selseatsdiv").style.color = "#66ff66";
     selseats.innerText = "Booked seats: " + array.join() + " successfully!";
+    window.location = 'confirm.html';
   }
 }
 
@@ -129,7 +130,3 @@ $(document).ready(function () {
   });
 });
 }
-
-document.getElementById('btn').addEventListener('click', () => {
-  window.location = 'confirm.html';
-})
