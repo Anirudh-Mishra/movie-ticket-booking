@@ -1,6 +1,6 @@
 $(function($) {
     $('[data-numeric]').payment('restrictNumeric');
-
+    $('.cc-number').payment('restrictNumeric');
     $('.cc-number').on('keyup', function() {
         var foo = $(this).val().split(" ").join(""); 
         if (foo.length > 0) {
