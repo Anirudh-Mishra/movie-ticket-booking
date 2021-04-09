@@ -1,6 +1,10 @@
 $(function($) {
     $('[data-numeric]').payment('restrictNumeric');
-    $('.cc-number').payment('restrictNumeric');
+
+    $('.cc-number').keypress(function(key) {
+      if((key.charCode < 48 || key.charCode > 57) && key.charCode != 32) return false;
+    });
+    
     $('.cc-number').on('keyup', function() {
         var foo = $(this).val().split(" ").join(""); 
         if (foo.length > 0) {
@@ -8,6 +12,7 @@ $(function($) {
         }
         $(this).val(foo);
     });
+    
 
     $('.cc-exp').payment('formatCardExpiry');
     $('.cc-cvc').payment('formatCardCVC');
