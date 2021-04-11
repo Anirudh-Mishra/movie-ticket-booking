@@ -50,6 +50,7 @@ function getMovie() {
                     <li class="list-group-item"><strong>Genre:</strong> ${genre.join(", ")}</li>
                     <li class="list-group-item"><strong>Available in:</strong> ${lang.join(", ")}</li>
                     <li class="list-group-item"><strong>Plot:</strong> ${movie.overview}</li>
+                    <a href="#" class="btn btn-danger active" id="trailer" target="_blank" role="button" aria-pressed="true">Watch Trailer</a>
               </ul>
             </div>
           </div>
@@ -67,6 +68,27 @@ function getMovie() {
       $('#movie').html(output);
 
       localStorage.setItem('rating',movie.vote_average);
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+    
+
+    axios.get(url + movieId + "/videos?api_key=" + apikey)
+    .then((response) => {
+      let m = response.data.results;
+      
+
+      let x=m[0].key;
+      //console.log(x);
+
+      let yt= "https://www.youtube.com/watch?v="+x;
+      //console.log(yt);
+
+      $('#trailer').attr("href",yt);
+
+      // $('#movie').html(output);
 
     })
     .catch((err) => {
