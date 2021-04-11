@@ -5,7 +5,6 @@
 }
 
 .xyz {
-  background-color: #12262b;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -90,7 +89,7 @@
   align-self: center;
   transform: perspective(25px) rotateX(-1.25deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
-  padding:50px 85px 75px 160px;
+  padding: 4% 4% 5% 10%;
   color: #12262b;
 }
 
