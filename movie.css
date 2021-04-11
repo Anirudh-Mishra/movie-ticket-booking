@@ -143,7 +143,7 @@ p.text span {
 }
 
 .list-group-item{
-  background-color:  #12262b;
+  background-color: transparent;
   color: aliceblue;
 }
 
