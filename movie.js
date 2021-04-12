@@ -50,7 +50,7 @@ function getMovie() {
                     <li class="list-group-item"><strong>Genre:</strong> ${genre.join(", ")}</li>
                     <li class="list-group-item"><strong>Available in:</strong> ${lang.join(", ")}</li>
                     <li class="list-group-item"><strong>Plot:</strong> ${movie.overview}</li>
-                    <a href="#" class="btn btn-danger active" id="trailer" target="_blank" role="button" aria-pressed="true">Watch Trailer</a>
+                    
               </ul>
             </div>
           </div>
@@ -86,9 +86,13 @@ function getMovie() {
       let yt= "https://www.youtube.com/watch?v="+x;
       //console.log(yt);
 
-      $('#trailer').attr("href",yt);
+      let output1=`
+          <a href="${yt}" class="btn btn-danger active" id="trailer" target="_blank" role="button" aria-pressed="true">Watch Trailer</a>
+      `;
 
-      // $('#movie').html(output);
+      // $('#trailer').attr("href",yt);
+
+      $( ".list-group" ).append(output1);
 
     })
     .catch((err) => {
