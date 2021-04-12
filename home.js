@@ -159,14 +159,19 @@ axios.get(url + "&region=US")
           </div>
           `;
       //console.log(output);
-      if (i == 1)
+      if (i == 1){
         $('#view1').html(output);
+        $('.cap1').html(movie.title);
+      }
 
-      if (i == 2)
+      if (i == 2){
         $('.v2').html(output);
+        $('.cap2').html(movie.title);
+      }
 
       if (i == 3){
         $('.v3').html(output);
+        $('.cap3').html(movie.title);
         return false;}
 
     });
