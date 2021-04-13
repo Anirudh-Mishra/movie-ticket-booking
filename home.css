@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
 body{
   background: url(background1.jpg) center center fixed;
   -webkit-background-size: cover;
@@ -83,6 +85,13 @@ body{
   margin-top: 20px;
   color: white;
   text-align: center;
+}
+
+.cap1, .cap2, .cap3{
+  font-family: 'Alfa Slab One';
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  -webkit-text-stroke:0.6px #e65c00;
 }
 
 /* Footer CSS Starts here!!!!
