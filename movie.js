@@ -34,6 +34,7 @@ function getMovie() {
       // console.log(bg);
       // $("#movie").css("background-image", "url(" + bg + ")");
 
+      document.querySelector('title').textContent = movie.title + " - Movie | Book Seats Now!";
 
       let output = `
             <div class="row">
@@ -64,8 +65,8 @@ function getMovie() {
         let bg = a + bgi;
         sessionStorage.setItem('bgposter',bg);
 
-
       $('#movie').html(output);
+
 
       localStorage.setItem('rating',movie.vote_average);
 
