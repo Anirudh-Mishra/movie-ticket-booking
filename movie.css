@@ -124,7 +124,7 @@ p.text span {
 }
 
 .card{
-  background-color: url("https://us.123rf.com/450wm/panychev/panychev2004/panychev200400074/144497290-stone-texture-dark-blue-background-with-dark-edges-empty-backdrop-for-placing-design-elements.jpg?ver=6");
+  background-color: url("cardbackground.jpg");
   float: left;
   margin-left: 100px;
   border:#ff7700;
@@ -146,7 +146,7 @@ p.text span {
 }
 
 #billsum{
-  background: url("https://image.shutterstock.com/image-photo/grunge-black-background-texture-space-260nw-373662322.jpg ");
+  background: url("billbackground.jpg");
   border: none;
   margin: 0% auto;
 }
