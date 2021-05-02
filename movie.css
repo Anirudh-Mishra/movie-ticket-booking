@@ -124,11 +124,10 @@ p.text span {
 }
 
 .card{
-  /* background-color: #12262b; */
-  background-color: rgb(58, 55, 55);
+  background-color: url("https://us.123rf.com/450wm/panychev/panychev2004/panychev200400074/144497290-stone-texture-dark-blue-background-with-dark-edges-empty-backdrop-for-placing-design-elements.jpg?ver=6");
   float: left;
   margin-left: 100px;
-  border:#ff1a1a;
+  border:#ff7700;
   border-style: double;
 }
 
@@ -147,6 +146,7 @@ p.text span {
 }
 
 #billsum{
+  background: url("https://image.shutterstock.com/image-photo/grunge-black-background-texture-space-260nw-373662322.jpg ");
   border: none;
   margin: 0% auto;
 }
