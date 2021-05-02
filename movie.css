@@ -124,7 +124,7 @@ p.text span {
 }
 
 .card{
-  background-color: url("cardbackground.jpg");
+  background: url("cardbackground.jpg");
   float: left;
   margin-left: 100px;
   border:#ff7700;
