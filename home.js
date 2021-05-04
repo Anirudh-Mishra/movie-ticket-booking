@@ -1,7 +1,14 @@
+$(window).on("load",function(){
+  setTimeout(function(){
+    $(".loader-wrapper").fadeOut("slow");
+    $("#carousel-example-2").css("visibility","visible");
+    $('.container').fadeIn(1000);
+  },500);
+});
+
 $(document).ready(() => {
   var apikey = "2ad7681adf43290559749458fc78a528";
   var a = "https://image.tmdb.org/t/p/w500";
-
   var url = "https://api.themoviedb.org/3/trending/movie/day?api_key="+apikey;
   axios.get(url)
     .then((response) => {         //returns a promise
