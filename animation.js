@@ -1,3 +1,10 @@
+$(window).on("load",function(){
+  setTimeout(function(){
+    $(".loader-wrapper").fadeOut("slow");
+    $('.container').fadeIn(1000);
+  },500);
+});
+
 $(document).ready(() =>{
     var apikey="2ad7681adf43290559749458fc78a528";
     var a="https://image.tmdb.org/t/p/w500";
