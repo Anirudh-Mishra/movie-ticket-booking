@@ -1,3 +1,10 @@
+$(window).on("load",function(){
+  setTimeout(function(){
+    $(".loader-wrapper").fadeOut("slow");
+    $('.container').css('display','flex');
+  },500);
+});
+
 $(function($) {
     $('[data-numeric]').payment('restrictNumeric');
 
