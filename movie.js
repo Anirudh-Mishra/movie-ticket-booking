@@ -1,4 +1,3 @@
-
 function movieSelected(id) {     //to transfer movie details from 1 html page to another
   sessionStorage.setItem('movieId', id);
   window.location = 'movie.html';
@@ -6,6 +5,9 @@ function movieSelected(id) {     //to transfer movie details from 1 html page to
 }
 
 function getMovie() {
+  setTimeout(function(){
+    $(".loader-wrapper").fadeOut("slow");
+  },500);
   let movieId = sessionStorage.getItem('movieId');    //get using data sent via session storage
 
   var apikey = "2ad7681adf43290559749458fc78a528";
@@ -71,10 +73,12 @@ function getMovie() {
       localStorage.setItem('rating',movie.vote_average);
 
     })
+    
     .catch((err) => {
       console.log(err);
     });
-    
+
+    $('div').fadeIn(1000);
 
     axios.get(url + movieId + "/videos?api_key=" + apikey)
     .then((response) => {
