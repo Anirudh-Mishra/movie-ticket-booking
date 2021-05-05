@@ -39,16 +39,16 @@ $(function($) {
     $('.validation').addClass($('.has-error').length ? 'text-danger' : 'text-success');
     });
 
-    var price= sessionStorage.getItem('price');
+    var price= localStorage.getItem('price');
     $('#p1').html("Rs "+price);
 
-    var name= sessionStorage.getItem('name');
+    var name= localStorage.getItem('name');
     $('#m1').html(name);
 
-    var ss= sessionStorage.getItem('seats');
+    var ss= localStorage.getItem('seats');
     $('#s1').html(ss);
 
-    var price2= sessionStorage.getItem('addon');
+    var price2= localStorage.getItem('addon');
     $('#p2').html("Rs "+price2);
 
     var gst= 0.18*(Number(price)+ Number(price2));
@@ -59,9 +59,9 @@ $(function($) {
     var tf= total.toFixed(2);
     $('#total1').html("Rs "+tf);
 
-    var poster= sessionStorage.getItem('poster');
+    var poster= localStorage.getItem('poster');
     $("#movImg").attr("src", poster);
 
-    var bgposter= sessionStorage.getItem('bgposter');
+    var bgposter= localStorage.getItem('bgposter');
     $("body").css({"background-image": "url(" + bgposter + ")", 'background-repeat': 'no-repeat'});;
     });    

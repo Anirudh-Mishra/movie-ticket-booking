@@ -45,7 +45,7 @@ const updateSelectedSeatsCount = () => {
 
   price_seats = selectedSeatsCount * price_per_seat;
   price.innerText = price_seats;
-  sessionStorage.setItem('price', price_seats);
+  localStorage.setItem('price', price_seats);
 };
 
 // Seat select event
@@ -61,7 +61,7 @@ container.addEventListener('click', e => {
     }
     else{
       array.push(a);
-      sessionStorage.setItem('seats', array);
+      localStorage.setItem('seats', array);
     }
 
     updateSelectedSeatsCount();
@@ -112,7 +112,7 @@ function calcBill() {
   bill += document.getElementById("quantity2").value * 30;
   bill += document.getElementById("quantity3").value * 120;
   bill += document.getElementById("quantity4").value * 180;
-  sessionStorage.setItem('addon',bill);
+  localStorage.setItem('addon',bill);
   return bill;
 }
 
