@@ -1,5 +1,5 @@
 function movieSelected(id) {     //to transfer movie details from 1 html page to another
-  sessionStorage.setItem('movieId', id);
+  localStorage.setItem('movieId', id);
   window.location = 'movie.html';
   return false;
 }
@@ -8,7 +8,7 @@ function getMovie() {
   setTimeout(function(){
     $(".loader-wrapper").fadeOut("slow");
   },500);
-  let movieId = sessionStorage.getItem('movieId');    //get using data sent via session storage
+  let movieId = localStorage.getItem('movieId');    //get using data sent via local storage
 
   var apikey = "2ad7681adf43290559749458fc78a528";
   var a = "https://image.tmdb.org/t/p/w500";
@@ -60,12 +60,12 @@ function getMovie() {
         `;
 
         var x=a + movie.poster_path;
-        sessionStorage.setItem('name',movie.title);
-        sessionStorage.setItem('poster',x);
+        localStorage.setItem('name',movie.title);
+        localStorage.setItem('poster',x);
 
         var bgi = movie.backdrop_path;
         let bg = a + bgi;
-        sessionStorage.setItem('bgposter',bg);
+        localStorage.setItem('bgposter',bg);
 
       $('#movie').html(output);
 
