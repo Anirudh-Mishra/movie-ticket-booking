@@ -23,7 +23,6 @@ function getMovie() {
         let s = movie.genres[i].name;
         genre.push(s);
       }
-      $('div').fadeIn(1000);
       // console.log(genre.join(","));
 
       var lang = [];
