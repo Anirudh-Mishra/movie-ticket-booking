@@ -141,150 +141,138 @@ body{
 !!!!! */
 
 
-
-.footer_1 hr{
-  float:left;
-  margin-left: 5%;
-  margin-right: 5%;
-  height:1.5px;
-  width:35%;
-  background-color:whitesmoke;
-}
-
-.footer_text{
-  margin-top: 5px;
-  float: left;
-  width:10%;
+.foot_lm{
   text-align: center;
   color:whitesmoke; 
   font-weight: bold;
+  padding-top: 4px;
 }
 
-.TandC{
-  margin-left: 3%;
-  float:left;
-  width:40%;
-  color:whitesmoke;
+.foot_lm a{
+  text-decoration: none;
+}
+
+.foot_pp{
   text-align: center;
-  font-size: 13px;
+  color:whitesmoke; 
+  font-size: 0.85rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+  transition: 0.8s;
 }
 
-.PP{
-  transition: 1s;
-  letter-spacing: 2px;
-}
-
-.TC{
-  transition: 1s;
-  letter-spacing: 2px;
-}
-
-.ABOUT{
-  transition: 1s;
-  letter-spacing: 2px;
-}
-
-.PP:hover{
+.foot_pp:hover{
   cursor: pointer;
-  letter-spacing: 3.65px;
-  transform:translate(0,-2px);
-  transition: 1s;
+  letter-spacing: 0.18rem;
+  transition: 0.8s;
 }
 
-.TC:hover{
-  cursor: pointer;
-  letter-spacing: 3.45px;
-  transform:translate(0,-2px);
-  transition: 1s;
-}
-
-.ABOUT:hover{
-  cursor: pointer;
-  letter-spacing: 4px;
-  transform:translate(0,-2px);
-  transition: 1s;
-}
-
-.footer_img{
-  float:left;
-  width:5%;
-  margin: none;
-  margin-left: 5%;
-  margin-bottom: none;
-  margin-right: 10px;
-  padding-top: 45px;
-  
-}
-
-.logos{
-  float:left;
-  width:30%;
-}
-
-.details{
-  float:left;
-  width:15%;
-  color:whitesmoke;
-  margin-top: 18px;
+.foot_num{
   text-align: center;
-  font-size: 14px;
+  color:whitesmoke; 
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+  transition: 0.8s;
 }
 
-.footer_img img:hover{
-  box-shadow: whitesmoke;
+.foot_num:hover{
   cursor: pointer;
-  transform:translate(0,-10px);
-  transition: 1s;
+  letter-spacing: 0.23rem;
+  transition: 0.8s;
 }
 
-#footer_img_fb{
+.foot_TC{
+  text-align: center;
+  color:whitesmoke; 
+  font-size: 0.85rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+  transition: 0.8s;
+  padding-top: 0.688rem;
+}
+
+.foot_TC:hover{
+  cursor: pointer;
+  letter-spacing: 0.16rem;
+  transition: 0.8s;
+}
+
+.foot_abt{
+  text-align: center;
+  color:whitesmoke; 
+  font-size: 0.85rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+}
+
+.foot_abt:hover{
+  cursor: pointer;
+  letter-spacing: 0.21rem;
+  transition: 0.8s;
+}
+
+.foot_mem{
+  text-align: center;
+  color:whitesmoke; 
+  font-size: 0.9rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+  transition: 0.8s;
+}
+
+.foot_mem:hover{
+  cursor: pointer;
+  letter-spacing: 0.21rem;
+  transition: 0.8s;
+}
+
+.foot_mail{
+  text-align: center;
+  color:whitesmoke; 
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+  transition: 0.8s;
+  padding-top: 0.688rem;
+}
+
+.foot_mail:hover{
+  cursor: pointer;
+  letter-spacing: 0.21rem;
+  transition: 0.8s;
+}
+
+.foot_image{
+  text-align: center;
+}
+
+.foot_image_fb, .foot_image_insta, .foot_image_twitter{
   border-radius: 50%;
-  transition: 1s;
+  transition: 0.8s;
 }
 
-#footer_img_twitter{
-  border-radius: 50%;
-  transition: 1s;
-}
 
-#footer_img_insta{
-  border-radius: 50%;
-  transition: 1s;
-}
-
-.details{
-  transition: 1s;
-}
-
-#footer_number{
-  letter-spacing: 2px;
-}
-
-#footer_number:hover{
+.foot_image_fb:hover, .foot_image_insta:hover, .foot_image_twitter:hover{
+  transform: translateY(-0.5rem);
   cursor: pointer;
-  letter-spacing: 5px;
-  transform:translate(0,-2px);
-  transition: 1s;
 }
 
-#footer_email{
-  letter-spacing: 2px;
+.foot_cont{
+  margin-bottom:  1.25rem;
 }
 
-#footer_email:hover{
-  cursor: pointer;
-  letter-spacing: 5px;
-  transform:translate(0,-2px);
-  transition: 1s;
+
+.foot_images{
+  text-align: center;
 }
 
-#footer_membership{
-  letter-spacing: 2px;
+.foot_hr{
+  border: whitesmoke solid 0.063rem;
+  width: 90%;
 }
 
-#footer_membership:hover{
-  cursor: pointer;
-  letter-spacing: 4.5px;
-  transform:translate(0,-2px);
-  transition: 1s;
+a.foot_links{
+  text-decoration: none;
+  color: whitesmoke;
 }
