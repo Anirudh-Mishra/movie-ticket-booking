@@ -78,7 +78,7 @@ function getMovie() {
       console.log(err);
     });
 
-    $('div').fadeIn(1000);
+   
 
     axios.get(url + movieId + "/videos?api_key=" + apikey)
     .then((response) => {
@@ -105,3 +105,5 @@ function getMovie() {
     });
     
 }
+
+$('div').fadeIn(1000);
