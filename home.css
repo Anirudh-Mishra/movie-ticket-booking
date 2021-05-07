@@ -288,7 +288,3 @@ body{
   transform:translate(0,-2px);
   transition: 1s;
 }
-
-.container{
-  display: none;
-}
