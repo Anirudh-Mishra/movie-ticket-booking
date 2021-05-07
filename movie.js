@@ -8,6 +8,7 @@ function getMovie() {
   setTimeout(function(){
     $(".loader-wrapper").fadeOut("slow");
   },500);
+  
   let movieId = localStorage.getItem('movieId');    //get using data sent via local storage
 
   var apikey = "2ad7681adf43290559749458fc78a528";
@@ -22,6 +23,7 @@ function getMovie() {
         let s = movie.genres[i].name;
         genre.push(s);
       }
+      $('div').fadeIn(1000);
       // console.log(genre.join(","));
 
       var lang = [];
@@ -71,7 +73,7 @@ function getMovie() {
 
 
       localStorage.setItem('rating',movie.vote_average);
-
+      
     })
     
     .catch((err) => {
@@ -106,4 +108,4 @@ function getMovie() {
     
 }
 
-$('div').fadeIn(1000);
+
