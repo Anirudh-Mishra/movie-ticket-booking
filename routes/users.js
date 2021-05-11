@@ -1,9 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
+
+//User model
+const User = require('../models/User');
 
 //Home page
 router.get('/welcome', (req, res) =>{
     res.render('welcome', { title: 'Pick-A-Flick | Book Movies Online | Action | Animated | Crime | Drama | Horror | Romance | Science-fiction | Thriller |' });
+})
+
+//Dashboard page
+router.get('/dashboard', (req, res) =>{
+    res.render('dashboard', { title: 'Pick-A-Flick | Book Movies Online | Action | Animated | Crime | Drama | Horror | Romance | Science-fiction | Thriller |' });
 })
 
 //Action movies page
@@ -71,11 +81,93 @@ router.get('/signup', (req, res) =>{
     res.render('signup', { title: 'Sign up' });
 })
 
+//Signup handle
+router.post('/signup', (req, res) =>{
+    console.log(req.body)
+    const { username, email, password, cpassword } = req.body;
+    let errors = []
+    User.findOne({ username: username })
+        .then(user => {
+            if(user){
+                //Username exists
+                errors.push({ msg: 'Username already taken!' })
+                c += 1;
+                res.render('signup',{
+                    title: 'Sign up',
+                    errors,
+                    username,
+                    email,
+                    password,
+                    cpassword
+                });
+            }
+
+            else{
+                User.findOne({ email: email })
+                .then(user => {
+                    if(user){
+                        //User email exists
+                        errors.push({ msg: 'Email is already registered!' })
+                        res.render('signup',{
+                            title: 'Sign up',
+                            errors,
+                            username,
+                            email,
+                            password,
+                            cpassword
+                        });
+                    }
+                    else{
+                        const newUser = new User({
+                            username,
+                            email,
+                            password,
+                        });
+                        console.log(newUser);
+                        // Hash password
+                        bcrypt.genSalt(10, (err, salt) => 
+                            bcrypt.hash(newUser.password, salt, (err, hash) =>{
+                                if(err) throw err;
+                                //Set password to hashed password
+                                newUser.password = hash;
+                                //Save user
+                                newUser.save()
+                                    .then( user => {
+                                        req.flash('success_msg', 'You are now registered and can log in');
+                                        res.redirect('/users/login');
+                                    })
+                                    .catch(err => console.log(err));
+                        }))
+                    }
+                })
+            }
+        });
+})
+
+
 //Login page
 router.get('/login', (req, res) =>{
     res.render('login', { title: 'Log in' });
 })
 
+//Login handle
+router.post('/login', (req, res, next) => {
+    
+    passport.authenticate('local', {
+      successRedirect: '/users/welcome',
+      failureRedirect: '/users/login',
+      failureFlash: true
+    })(req, res, next);
+    username = req.body.username;
+});
+
+// Logout
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'You have been logged out');
+    username = '';
+    res.redirect('/users/login');
+});
 
 
 module.exports = router;

@@ -60,10 +60,11 @@
 </nav>
 
 <div class="signup-form">
-    <form method="post" name="myform" onsubmit="return validate()">
+    <form method="post" action="/users/signup" name="myform" onsubmit="return validate()">
         <h2>Sign Up</h2>
         <p>Please fill in this form to create an account!</p>
         <hr>
+        <%- include ("./partials/messages"); %>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -115,7 +116,7 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
-    </form>
+    </form> 
     <div class="text-center">Already have an account? <a href="/users/login">Login here</a></div>
 </div>
 <script src="/stylesheets/signup.js"></script>
