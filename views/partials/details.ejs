@@ -3,12 +3,12 @@
 
     <button class="btn btn-danger navbar-btn" style="margin-left:15px; padding-left: 16px; padding-right: 16px;"><a class="link1" href="/users/login">Log in</a></button>
 <% } else { %>
-    <li class="nav-item dropdown" style="margin-left: 400px">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Welcome <%= username %>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-          <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
-        </ul>
-    </li>
+  <li class="nav-item dropdown" style="padding-left:380px;">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Welcome <%= username %>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="margin-left:380px;">
+      <a class="dropdown-item" href="/users/logout">Log Out</a>
+    </div>
+  </li>
 <% } %>
