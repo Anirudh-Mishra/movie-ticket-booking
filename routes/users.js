@@ -66,6 +66,15 @@ router.get('/confirm', (req, res) =>{
     res.render('confirm', { title: 'Payment Confirmation' });
 })
 
+router.post('/confirm', (req, res) =>{
+    if (req.isAuthenticated()) {
+        res.render('success', { title: 'Successful Payment' });
+      } else {
+        req.flash('error_msg', 'Please log in first!');
+        res.redirect('login');
+    }
+})
+
 //Payment success page
 router.get('/success', (req, res) =>{
     res.render('success', { title: 'Successful Payment' });

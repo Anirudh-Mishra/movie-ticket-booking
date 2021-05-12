@@ -11,7 +11,6 @@ var price_per_seat;
 
 if (localStorage['rating']) {
 let rating = localStorage.getItem('rating'); 
-console.log(rating);
 
 
 const populateUI = () => {

@@ -29,7 +29,6 @@ $(function($) {
     };
     
     $('form').submit(function(e) {
-    e.preventDefault();
     var cardType = $.payment.cardType($('.cc-number').val());
     $('.cc-number').toggleInputError(!$.payment.validateCardNumber($('.cc-number').val()));
     $('.cc-exp').toggleInputError(!$.payment.validateCardExpiry($('.cc-exp').payment('cardExpiryVal')));

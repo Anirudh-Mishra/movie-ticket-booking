@@ -1,5 +1,4 @@
 function paid(){
-  event.preventDefault();
   var number=document.form.number.value;
   var expiry=document.form.expiry.value;
   var cvc=document.form.cvc.value;
@@ -9,28 +8,37 @@ function paid(){
   if(number.length<19){
     document.getElementById("error1").innerHTML="*Please enter full card number";
     check = 0;
+    return false;
   }
+
   else{
     document.getElementById("error1").innerHTML="";
   }
+
   if(!expiry.match(datecheck)){
     document.getElementById("error2").innerHTML="*Please enter a proper date";
     check = 0;
+    return false;
   }
+
   else{
     document.getElementById("error2").innerHTML="";
   }
+
   if(cvc.length != 3){
     document.getElementById("error3").innerHTML="*Please enter a proper CVV";
     check = 0;
+    return false;
   }
+
   else{
     document.getElementById("error3").innerHTML="";
   }
+  
   if(check == 1){
     document.getElementById("error3").innerHTML="";
     document.getElementById("pay-btn").innerHTML="Booking Confirmed!";
-    pageRedirect();
+    return true;
   }
 }
 
@@ -90,10 +98,3 @@ function select(){
   }
 }
 
-function pageRedirect(){
-  var delay = 1000;
-
-  setTimeout(function(){
-   window.location = "/users/success";
-  },delay);
-}
