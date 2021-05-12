@@ -43,12 +43,15 @@ $(function($) {
 
     var name= localStorage.getItem('name');
     $('#m1').html(name);
+    $('#moviename').val(name);
 
     var ss= localStorage.getItem('seats');
     $('#s1').html(ss);
+    $('#seating').val(ss);
 
     var price2= localStorage.getItem('addon');
     $('#p2').html("Rs "+price2);
+    $('#addonscost').val(price2);
 
     var gst= 0.18*(Number(price)+ Number(price2));
     var fgst= gst.toFixed(2);

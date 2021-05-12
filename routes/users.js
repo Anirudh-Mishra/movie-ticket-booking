@@ -5,6 +5,7 @@ const passport = require('passport');
 
 //User model
 const User = require('../models/User');
+const Movie = require('../models/Movie');
 
 //Home page
 router.get('/welcome', (req, res) =>{
@@ -66,10 +67,24 @@ router.get('/confirm', (req, res) =>{
     res.render('confirm', { title: 'Payment Confirmation' });
 })
 
+//Payment confirmation handle
 router.post('/confirm', (req, res) =>{
     if (req.isAuthenticated()) {
-        res.render('success', { title: 'Successful Payment' });
-      } else {
+        const { moviename, seating, addonscost, x, y, z, a } = req.body;
+        const newBooking = new Movie({
+            username,
+            moviename,
+            seating,
+        });
+        console.log(newBooking);
+        newBooking.save()
+            .then( user => {
+                res.redirect('/users/success');
+            })
+            .catch(err => console.log(err));
+    } 
+
+    else {
         req.flash('error_msg', 'Please log in first!');
         res.redirect('login');
     }
