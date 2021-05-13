@@ -3,18 +3,40 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-//User model
+//User and Booked Movies model
 const User = require('../models/User');
 const Movie = require('../models/Movie');
+const Seats = require('../models/Seats');
 
 //Home page
 router.get('/welcome', (req, res) =>{
     res.render('welcome', { title: 'Pick-A-Flick | Book Movies Online | Action | Animated | Crime | Drama | Horror | Romance | Science-fiction | Thriller |' });
 })
 
-//Dashboard page
-router.get('/dashboard', (req, res) =>{
-    res.render('dashboard', { title: 'Pick-A-Flick | Book Movies Online | Action | Animated | Crime | Drama | Horror | Romance | Science-fiction | Thriller |' });
+//Bookings page
+router.get('/bookings', (req, res) =>{
+    var movieName = []
+    var seatsBooked = []
+    if (req.isAuthenticated()) {
+        
+        Movie.find({ username: username })
+            .then(user => {
+                for(var i=0; i<user.length; i++){
+                    movieName.push(user[i].moviename);
+                    seatsBooked.push(user[i].seating);
+                }
+                res.render('bookings', { 
+                    title: 'My Bookings',
+                    movieName: movieName,
+                    seatsBooked: seatsBooked
+                });
+            })
+            .catch(err => console.log(err));
+    }
+    else{
+        req.flash('error_msg', 'Please log in first!');
+        res.redirect('login');
+    }
 })
 
 //Action movies page
@@ -128,19 +150,19 @@ router.post('/signup', (req, res) =>{
 
             else{
                 User.findOne({ email: email })
-                .then(user => {
-                    if(user){
-                        //User email exists
-                        errors.push({ msg: 'Email is already registered!' })
-                        res.render('signup',{
-                            title: 'Sign up',
-                            errors,
-                            username,
-                            email,
-                            password,
-                            cpassword
-                        });
-                    }
+                    .then(user => {
+                        if(user){
+                            //User email exists
+                            errors.push({ msg: 'Email is already registered!' })
+                            res.render('signup',{
+                                title: 'Sign up',
+                                errors,
+                                username,
+                                email,
+                                password,
+                                cpassword
+                            });
+                        }
                     else{
                         const newUser = new User({
                             username,
