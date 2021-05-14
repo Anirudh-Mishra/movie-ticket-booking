@@ -84,21 +84,8 @@ function book() {
 }
 
 function loadseats() {
-  var arrayseats = [];
-  var num_of_seats = Math.floor((Math.random() * 10) + 8);
-  var i;
-  for (i = 0; i < num_of_seats; i++) {
-    var alpha = Math.floor((Math.random() * 6) + 1);
-    var num = Math.floor((Math.random() * 8) + 1);
-    var seatname = String.fromCharCode(64 + alpha) + num.toString();
-    if (arrayseats.includes(seatname)) {
-      i -= 1;
-      continue;
-    }
-    arrayseats.push(seatname);
-    document.getElementById(seatname).className = "seat occupied";
-    setPrice(rating);
-  }
+  
+  setPrice(rating);
 }
 
 function setPrice(n) {

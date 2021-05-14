@@ -81,7 +81,39 @@ router.get('/thriller', (req, res) =>{
 
 //Booking page
 router.get('/movies', (req, res) =>{
-    res.render('movies', { title: 'Book now' });
+    filledSeats = [];
+    moviename = req.query.moviename;
+    Seats.findOne({ moviename: moviename })
+        .then( movie => {
+            if(movie){
+                filledSeat = movie.booked.toString();
+                filledSeats = filledSeat.split(',');
+                res.render('movies', { title: 'Book now' });
+            }
+            else{
+                var num_of_seats = Math.floor((Math.random() * 10) + 8);
+                var i;
+                for (i = 0; i < num_of_seats; i++) {
+                    var alpha = Math.floor((Math.random() * 6) + 1);
+                    var num = Math.floor((Math.random() * 8) + 1);
+                    var seatname = String.fromCharCode(64 + alpha) + num.toString();
+                    if (filledSeats.includes(seatname)) {
+                        i -= 1;
+                        continue;
+                    }
+                    filledSeats.push(seatname);
+                }
+                booked = filledSeats;
+                const NewSeats = new Seats({
+                    moviename,
+                    booked
+                })
+                NewSeats.save()
+                    .then( movie => {
+                        res.render('movies', { title: 'Book now' });
+                    })
+            }
+        })
 })
 
 //Payment confirmation page
@@ -92,13 +124,38 @@ router.get('/confirm', (req, res) =>{
 //Payment confirmation handle
 router.post('/confirm', (req, res) =>{
     if (req.isAuthenticated()) {
-        const { moviename, seating, addonscost, x, y, z, a } = req.body;
+        var { moviename, seating, addonscost, x, y, z, a } = req.body;
         const newBooking = new Movie({
             username,
             moviename,
             seating,
         });
+        const movie = moviename;
+        var prevBooked;
+        seatingArr = seating.split(',');
+        console.log(seatingArr);
         console.log(newBooking);
+        Seats.findOne({ moviename : moviename })
+            .then(movie => {
+                if(movie){
+                    var moviename = movie.moviename;
+                    prevBooked = movie.booked;
+                    booked = prevBooked.concat(seatingArr)
+                    console.log(booked);
+                    newSeats = new Seats({
+                        moviename,
+                        booked
+                    })
+                    newSeats.save();
+                }
+            })
+            .catch(err => console.log(err));
+        moviename = movie;
+        console.log(moviename);
+        Seats.remove({ moviename : moviename })
+            .then(x => {
+                console.log(x)
+            })
         newBooking.save()
             .then( user => {
                 res.redirect('/users/success');

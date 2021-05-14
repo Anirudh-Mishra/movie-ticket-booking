@@ -1,6 +1,12 @@
 function movieSelected(id) {     //to transfer movie details from 1 html page to another
   localStorage.setItem('movieId', id);
-  window.location = '/users/movies';
+  var apikey = "2ad7681adf43290559749458fc78a528";
+  var url = "https://api.themoviedb.org/3/movie/";
+  axios.get(url + id + "?api_key=" + apikey)
+    .then((response) => {
+      let movie = response.data;
+      window.location = '/users/movies?moviename='+movie.title;
+    });
   return false;
 }
 
