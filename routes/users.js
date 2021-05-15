@@ -133,15 +133,12 @@ router.post('/confirm', (req, res) =>{
         const movie = moviename;
         var prevBooked;
         seatingArr = seating.split(',');
-        console.log(seatingArr);
-        console.log(newBooking);
         Seats.findOne({ moviename : moviename })
             .then(movie => {
                 if(movie){
                     var moviename = movie.moviename;
                     prevBooked = movie.booked;
                     booked = prevBooked.concat(seatingArr)
-                    console.log(booked);
                     newSeats = new Seats({
                         moviename,
                         booked
@@ -151,16 +148,35 @@ router.post('/confirm', (req, res) =>{
             })
             .catch(err => console.log(err));
         moviename = movie;
-        console.log(moviename);
         Seats.remove({ moviename : moviename })
             .then(x => {
                 console.log(x)
             })
-        newBooking.save()
-            .then( user => {
-                res.redirect('/users/success');
+        
+        Movie.find({ username: username })
+            .then(user => {
+                    var prevSeats, delMovieName;
+                    for(var i=0; i<user.length; i++){
+                        if(user[i].moviename === moviename){
+                            prevSeats = user[i].seating;
+                        }
+                        delMovieName = user[i].moviename;
+                    }
+                    if(prevSeats){
+                        prevSeats = prevSeats.concat(','+newBooking.seating);
+                        newBooking.seating = prevSeats;
+                        Movie.remove({ username : username, moviename : moviename })
+                            .then( x => {
+                                console.log(x);
+                            })
+                    }
+                    newBooking.save()
+                        .then( user => {
+                            res.redirect('/users/success');
+                        })
+                        .catch(err => console.log(err));
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err));  
     } 
 
     else {

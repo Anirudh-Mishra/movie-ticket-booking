@@ -60,9 +60,8 @@ container.addEventListener('click', e => {
     }
     else{
       array.push(a);
-      localStorage.setItem('seats', array);
     }
-
+    localStorage.setItem('seats', array);
     updateSelectedSeatsCount();
     populateUI();
   }
@@ -84,12 +83,11 @@ function book() {
 }
 
 function loadseats() {
-  
   setPrice(rating);
 }
 
 function setPrice(n) {
-  price_per_seat = 150 * n / 10;
+  price_per_seat = 200 * n / 10;
 }
 
 function calcBill() {
