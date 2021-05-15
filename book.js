@@ -61,9 +61,8 @@ container.addEventListener('click', e => {
     }
     else{
       array.push(a);
-      localStorage.setItem('seats', array);
     }
-
+    localStorage.setItem('seats', array);
     updateSelectedSeatsCount();
     populateUI();
   }
